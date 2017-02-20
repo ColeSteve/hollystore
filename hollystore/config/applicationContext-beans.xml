@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 用户bean -->
+	<bean id="userDao" class="com.holly.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="userService" class="com.holly.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+
+	<bean id="userAction" class="com.holly.web.UserAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+		<property name="productsService" ref="productsService"></property>
+	</bean>
+
+	<!-- 产品Bean -->
+	<bean id="productsDao" class="com.holly.dao.impl.ProductsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="productsService" class="com.holly.service.impl.ProductsServiceImpl">
+		<property name="productsDao" ref="productsDao"></property>
+	</bean>
+
+	<bean id="productsAction" class="com.holly.web.ProductsAction"
+		scope="prototype">
+		<property name="productsService" ref="productsService"></property>
+	</bean>
+	
+	<!-- 分页bean -->
+	
+	<bean id="paginationAction"
+	class="com.holly.web.PaginationAction" scope="prototype">
+	<property name="userService" ref="userService"></property>
+	</bean>
+</beans>

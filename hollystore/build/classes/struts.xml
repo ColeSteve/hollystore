@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="do,action,,"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- 用户Action -->
+		<action name="UserAction_*" class="userAction" method="{1}">
+			<result name="list">/WEB-INF/page/userList.jsp</result>
+			<result name="loginSuccess">/WEB-INF/page/index.jsp</result>
+			<result name="loginError">/WEB-INF/page/login2.jsp</result>
+			<result name="search">/WEB-INF/page/searchUser.jsp</result>
+			<result name="condition">/WEB-INF/page/list.jsp</result>
+			<result name="updateUsers">/WEB-INF/page/updateUsers.jsp</result>
+			<result name="deleteUser" type="redirectAction">UserAction_list</result>
+			<result name="register">/WEB-INF/page/login2.jsp</result>
+		</action>
+
+
+		<!-- 产品Action -->
+		<action name="ProductAction_*" class="productsAction" method="{1}">
+			<result name="showProducts">/WEB-INF/page/showProducts.jsp</result>
+			<result name="info">/WEB-INF/page/showProductsInfo.jsp</result>
+			<result name="buyProduct" type="redirectAction">ProductAction_info</result>
+			<result name="myBuyCar">/WEB-INF/page/myBuyCar.jsp</result>
+			<result name="addProducts">/WEB-INF/page/addProducts.jsp</result>
+			<result name="showAllProducts">/WEB-INF/page/showAllProducts.jsp</result>
+			<result name="saveProdInfo" type="redirectAction">ProductAction_showAllProducts
+			</result>
+			<result name="checkProdStore">/WEB-INF/page/checkProdStore.jsp</result>
+			<result name="deleProduct" type="redirectAction">ProductAction_checkProdStore
+			</result>
+		</action>
+
+
+	</package>
+	<package name="Easyui" extends="json-default">
+		<!-- 分页显示Action -->
+		<action name="PaginationAction_*" class="paginationAction"
+			method="{1}">
+			<result type="json">
+			</result>
+		</action>
+	</package>
+
+</struts>

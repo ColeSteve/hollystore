@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-27 10:59:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.holly.domain.Users" table="SYS_USERS">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="age" type="int">
+            <column name="AGE" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="company" type="java.lang.String">
+            <column name="COMPANY" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="buyCar" type="java.lang.String">
+            <column name="BUY_CAR" />
+        </property>
+        <property name="prodCount" type="int">
+            <column name="PROD_COUNT" />
+        </property>
+        <property name="isAdmin" type="int" length="2">
+            <column name="IS_ADMIN" />
+        </property>
+        <set name="products" inverse="false" lazy="false">
+            <key>
+                <column name="usersID" />
+            </key>
+            <one-to-many class="com.holly.domain.Products" />
+        </set>
+    </class>
+</hibernate-mapping>

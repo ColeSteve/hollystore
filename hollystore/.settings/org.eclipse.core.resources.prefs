@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/page/index.jsp=UTF-8
+encoding//WebContent/identifyCode.jsp=UTF-8
+encoding//src/com/holly/dao/impl/CommonDaoImpl.java=GBK
+encoding//src/com/holly/service/impl/ProductsServiceImpl.java=GBK
+encoding//src/com/holly/util/StringUtils.java=GBK
+encoding//src/com/holly/web/ProductsAction.java=GBK
+encoding/WebContent=UTF-8

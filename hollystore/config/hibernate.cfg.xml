@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!--<property name="dialect">org.hibernate.dialect.OracleDialect</property> -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">false</property>
+		<property name="format_sql">true</property>
+
+		<!-- <property name="hibernate.connection.username">hollyv8</property> 
+			<property name="hibernate.connection.password">hollyv8</property> <property 
+			name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property> 
+			<property name="hibernate.connection.url">jdbc:oracle:thin:@172.16.52.3:1521:ORCL</property> 
+			<mapping resource="com/holly/domain/Users.hbm.xml"/> -->
+	</session-factory>
+</hibernate-configuration>
